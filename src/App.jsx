@@ -24,15 +24,11 @@ const App = () => {
   const [stack, setStack] = useState([]);
 
   const addToBurger = (ingredient)=>{
-    console.log(ingredient.name)
     setStack([ingredient, ...stack]);
-    console.log([ingredient, ...stack])
   }
   const removeFromBurger = (indexRemove) =>{
-    console.log(indexRemove)
     const next = stack.filter((ing, index) => index !== indexRemove); 
     setStack(next);
-    console.log('New stack:', next);
   }
   return (
     <main>

@@ -1,16 +1,12 @@
+import Ingredient from "../Ingredient/Ingredient.jsx";
+
 const IngredientList = ({ ingredients, onAdd }) => {
   return (
     <div>
       <h2>Ingredients</h2>
       <ul>
         {ingredients.map((ing, index) => (
-          <li key={index} style={{ backgroundColor: ing.color }}>
-            {ing.name}
-            <button type="button" onClick={() => {
-              console.log('Clicked + on:', ing.name);
-              onAdd(ing)
-            }}>+</button>
-          </li>
+          <Ingredient key={index} ingredient={ing} isAdd={true} onAdd={onAdd} />
         ))}
       </ul>
     </div>

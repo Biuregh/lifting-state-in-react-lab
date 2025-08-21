@@ -1,3 +1,4 @@
+import Ingredient from "../Ingredient/Ingredient.jsx";
 
 const BurgerStack = ({ stack, onRemove }) => {
   return (
@@ -6,10 +7,7 @@ const BurgerStack = ({ stack, onRemove }) => {
       <ul>
         {stack.length ? (
           stack.map((ing, index) => (
-            <li key={index} style={{ backgroundColor: ing.color}}>
-              {ing.name}
-              <button type="button" onClick={() => onRemove(index)}>x</button>
-            </li>
+            <Ingredient key={index} ingredient={ing} isAdd={false} index={index} onRemove={onRemove}/>
           ))
         ) : <li>No ingredients yet!</li>}
       </ul>
